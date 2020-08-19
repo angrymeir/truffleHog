@@ -322,6 +322,9 @@ def find_strings(git_url, since_commit=None, max_depth=1000000, printJson=False,
         prev_commit = None
         for curr_commit in repo.iter_commits(branch_name, max_count=max_depth):
             commitHash = curr_commit.hexsha
+            print('----------------------------------------')
+            print('Commit Hash: ', commitHash, 'type: ', type(commitHash))
+            print('Since Commit: ', since_commit, 'type: ', type(since_commit))
             if commitHash == since_commit:
                 since_commit_reached = True
             if since_commit and since_commit_reached:

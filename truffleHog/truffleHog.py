@@ -326,7 +326,7 @@ def find_strings(git_url, since_commit=None, max_depth=1000000, printJson=False,
                 since_commit_reached = True
             if since_commit and since_commit_reached:
                 prev_commit = curr_commit
-                continue
+                break
             # if not prev_commit, then curr_commit is the newest commit. And we have nothing to diff with.
             # But we will diff the first commit with NULL_TREE here to check the oldest code.
             # In this way, no commit will be missed.
